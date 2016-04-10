@@ -1,0 +1,31 @@
+html
+  head
+    link(href='index.css', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css')
+  body
+    .container
+      h1 Timestamp Microservice
+      p(class='codey list') The date is: <br \> #{date}
+      p(class='codey list') The date in Unix time is: <br \> #{unix}
+      h2 What is this app?
+      p.
+        This app allows you to see the current Unix time, as well as a more
+        human-readable date, by typing a query into the address bar after a forward
+        slash. The query can either be an easily readable date:
+          #[a(class='codey', href='/May%2011,%202001') /May 11, 2001]
+        or a Unix time value in milliseconds:
+          #[a(class='codey', href='/989539200000') /989539200000]
+      h2 Search this app
+      form(name='search-app',
+        method='GET'
+        action='search'
+      )
+        input(
+          type='text',
+          name='searchinput',
+          placeholder='May 11, 2001 || 989539200000'
+        )
+        input(
+          type='submit',
+          value='Search'
+        )
